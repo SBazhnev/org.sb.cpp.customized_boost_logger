@@ -3,10 +3,6 @@
 The Boost.Log documentation doesn't contain enough information (especially for beginners) on using and setting up.
 I collected from different sources this simple example.
 
-## Build settings
-
-`-pthread -lboost_log -lboost_thread`
-
 ## Logger settings
 
 `severity_level >= trace` by default and `severity_level >= info` if NDEBUG is defined.
@@ -55,7 +51,9 @@ int main(int argc, char **argv) {
   return 0;
 }
 ```
-Output:
+
+## Output
+
 ```console
 16:13:22.702259 [trace] []: This trace message!
 16:13:22.714258 [debug] []: This debug message!
@@ -65,4 +63,16 @@ Output:
 16:13:22.715151 [fatal] []: This fatal message!
 16:13:22.715444 [debug] [The class public method scope]: This class public method debug message!
 16:13:22.716000 [debug] [The class public method scope->The class private method scope]: This class private method debug message!
+```
+
+## Example build
+
+```console
+mkdir build
+
+cd build
+
+cmake ..
+
+cmake --build .
 ```
